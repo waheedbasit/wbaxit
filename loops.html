@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Loop Examples</title>
+</head>
+<body>
+  
+  <h1>Loop Examples</h1>
+  
+  <script>
+    // Sample data - array of student objects
+    const students = [
+      { id: 1, name: 'Azam', age: 20, grade: 'A' },
+      { id: 2, name: 'Asif', age: 22, grade: 'B' },
+      { id: 3, name: 'Zain', age: 21, grade: 'C' }
+      
+    ];
+
+    // Example of for loop
+    console.log("For Loop:");
+    for (let i = 0; i < students.length; i++) {
+      console.log(`ID: ${students[i].id}, Name: ${students[i].name}, Age: ${students[i].age}, Grade: ${students[i].grade}`);
+    }
+
+    // Example of while loop
+    console.log("\nWhile Loop:");
+    let j = 0;
+    while (j < students.length) {
+      console.log(`ID: ${students[j].id}, Name: ${students[j].name}, Age: ${students[j].age}, Grade: ${students[j].grade}`);
+      j++;
+    }
+
+    // Example of forEach loop
+    console.log("\nforEach Loop:");
+    students.forEach(student => {
+      console.log(`ID: ${student.id}, Name: ${student.name}, Age: ${student.age}, Grade: ${student.grade}`);
+    });
+
+    // Example of map loop
+    console.log("\nMap Loop:");
+    const studentNames = students.map(student => student.name);
+    console.log("Student Names:", studentNames);
+
+    // Example of filter loop
+    console.log("\nFilter Loop:");
+    const adults = students.filter(student => student.age >= 21);
+    console.log("Adult Students:", adults);
+  </script>
+</body>
+</html>
+
+
+
+
+
+
+

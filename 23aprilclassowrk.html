@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>23April</title>
+</head>
+
+<body align="center" bgcolor="yellow">
+    <h1>Select a student:</h1>
+    <select name="student" id="studentSelect"></select>
+
+    <div id="studentInfo">
+        <!-- Student information will be displayed here -->
+    </div>
+    <table>
+<thead>
+    <tr>
+        <th>name</th>
+        <th>rollnumber</th>
+        <th>class</th>
+    </tr>
+</thead>
+
+
+    </table>
+
+    <script>
+
+        var students = [
+            {
+                name: "Abdul Waheed",
+                rollnumber: 1997,
+                Class: "CS"
+            },
+            {
+                name: "Sania Nawaz",
+                rollnumber: 1985,
+                Class: "PHD"
+            },
+            {
+                name: "Umar Shafique",
+                rollnumber: 2005,
+                Class: "ISC"
+            },
+            {
+                name: "Mavia Nazir",
+                rollnumber: 2014,
+                Class: "5th Class"
+            },
+            {
+                name: "Rehana",
+                rollnumber: 2018,
+                Class: "PG"
+            }
+        ];
+
+        const stdDdl = document.querySelector("#studentSelect");
+        const studentInfoDiv = document.querySelector("#studentInfo");
+
+        students.forEach(function(std){
+            stdDdl.innerHTML += `<option value="${std.name}">${std.name}</option>`;
+        });
+
+        stdDdl.addEventListener('change', function() {
+            const selectedName = this.value;
+            const selectedStudent = students.find(student => student.name === selectedName);
+
+            if (selectedStudent) {
+                studentInfoDiv.innerHTML = `
+                    <h2>Student Information</h2>
+                    <p><strong>Name:</strong> ${selectedStudent.name}</p>
+                    <p><strong>Roll Number:</strong> ${selectedStudent.rollnumber}</p>
+                    <p><strong>Class:</strong> ${selectedStudent.Class}</p>
+                `;
+            } else {
+                studentInfoDiv.innerHTML = '<p>No information available for the selected student.</p>';
+            }
+        });
+
+        stdDdl.addEventListener("change", function(){
+            console.log("ddl selected element has been changed");
+        });
+
+        const h1 = document.querySelector("h1");
+    
+        h1.addEventListener("mouseover", function(){
+            const colors = ['yellow', 'red', 'black'];
+            h1.style.color = colors[Math.floor(Math.random() * colors.length)];
+            console.log("Mouse has been hovered over the h1 element.");
+        });
+    </script>
+</body>
+</html>

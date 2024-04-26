@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Loop Examples</title>
+</head>
+<body>
+  
+  <h1>Loop Examples</h1>
+  
+  <script>
+    // Sample data - array of student objects
+    const students = [
+      { id: 1, name: 'Waheed', email: 'waheed@gmail.com', marks: 85, rollNumber: '2001', age: 19 },
+      { id: 2, name: 'Ahmed', email: 'ahmed@gmail.com', marks: 78, rollNumber: '2002', age: 20 },
+      { id: 3, name: 'Khan', email: 'khan@gmail.com', marks: 92, rollNumber: '2003', age: 22 },
+      { id: 4, name: 'Ali', email: 'ali@gmail.com', marks: 88, rollNumber: '2004', age: 21 }
+    ];
+
+    // Example of for loop
+    console.log("For Loop:");
+    for (let i = 0; i < students.length; i++) {
+      console.log(`ID: ${students[i].id}, Name: ${students[i].name}, Email: ${students[i].email}, Marks: ${students[i].marks}, Roll Number: ${students[i].rollNumber}, Age: ${students[i].age}`);
+    }
+
+    // Example of while loop
+    console.log("\nWhile Loop:");
+    let j = 0;
+    while (j < students.length) {
+      console.log(`ID: ${students[j].id}, Name: ${students[j].name}, Email: ${students[j].email}, Marks: ${students[j].marks}, Roll Number: ${students[j].rollNumber}, Age: ${students[j].age}`);
+      j++;
+    }
+
+    // Example of forEach loop
+    console.log("\nforEach Loop:");
+    students.forEach(student => {
+      console.log(`ID: ${student.id}, Name: ${student.name}, Email: ${student.email}, Marks: ${student.marks}, Roll Number: ${student.rollNumber}, Age: ${student.age}`);
+    });
+
+    // Example of map loop
+    console.log("\nMap Loop:");
+    const studentNames = students.map(student => student.name);
+    console.log("Student Names:", studentNames);
+
+    // Example of filter loop
+    console.log("\nFilter Loop:");
+    const adults = students.filter(student => student.age >= 21);
+    console.log("Adult Students:", adults);
+  </script>
+</body>
+</html>

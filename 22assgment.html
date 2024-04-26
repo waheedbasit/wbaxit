@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Higher Order Methods of Array</title>
+</head>
+<body>
+
+    <h1>
+        Details 
+    </h1>
+    
+
+    <h1>
+        Customer
+    </h1>
+    <table id="customer-table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Address</th>
+                <th>City</th>
+                <th>State</th>
+                <th>Country</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>John Doe</td>
+                <td>john@example.com</td>
+                <td>1234567890</td>
+                <td>123 Main St</td>
+                <td>Anytown</td>
+                <td>CA</td>
+                <td>USA</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h1>
+        Products
+    </h1>
+    <table id="products-table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Price</th>
+                <th>Category</th>
+                <th>Stock</th>
+                <th>Manufacturer</th>
+                <th>Supplier</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>Laptop</td>
+                <td>High-performance laptop</td>
+                <td>$999</td>
+                <td>Electronics</td>
+                <td>50</td>
+                <td>ABC Electronics</td>
+                <td>Tech Supplier Inc.</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h1>
+        Vinder
+    </h1>
+    <table id="vinder-table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Gender</th>
+                <th>Location</th>
+                <th>Occupation</th>
+                <th>Interest</th>
+                <th>Relationship Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>Emma</td>
+                <td>25</td>
+                <td>Female</td>
+                <td>New York</td>
+                <td>Software Engineer</td>
+                <td>Traveling, Photography</td>
+                <td>Single</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script>
+        // Add border to all tables and table rows
+        document.querySelectorAll("table").forEach(function(table) {
+            table.style.border = "1px solid black";
+        });
+
+        document.querySelectorAll("tr").forEach(function(row) {
+            row.style.border = "1px solid black";
+        });
+
+        // Function to display table data in console
+        function displayTableData(tableId) {
+            const table = document.getElementById(tableId);
+            const rows = table.querySelectorAll("tr");
+
+            rows.forEach(function(row, index) {
+                const columns = row.querySelectorAll("td");
+                const rowData = [];
+
+                columns.forEach(function(column) {
+                    rowData.push(column.textContent);
+                });
+
+                console.log("Row " + (index + 1) + ":", rowData.join(", "));
+            });
+        }
+
+        // Call the function for each table
+        displayTableData("customer-table");
+        displayTableData("products-table");
+        displayTableData("vinder-table");
+    </script>
+</body>
+</html>
