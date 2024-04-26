@@ -1,0 +1,50 @@
+ 
+body{
+    background:yellowgreen;
+    border: solid black 5px;
+}
+img{
+border: solid yellow;
+
+}
+
+table {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+
+  h1{  
+    color: rgb(28, 41, 225);  
+    text-align: center;
+ }
+ 
+table{
+    align="center"
+};
+
+
+{
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+td, th {
+    border: 3px solid #071668;
+  text-align: center;
+  padding: 8px;
+}
+tr:nth-child(even) {
+    background-color: #4cb323;
+  }
+  hr {
+    border: 2px solid #000; /* 2px width solid black border */
+}
+table{
+    align=center 
+}
+ 
+
+ 
+ 
+          

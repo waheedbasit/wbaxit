@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head> 
+     <h1 Online Admission Form  ></h1>
+     <style>
+        body {
+          font-family: Arial, sans-serif;
+          background-color: #f0f0f0;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          
+        }
+    
+        .round-form-container {
+          text-align: center;
+        }
+
+    .rounded-heading {
+          background-color: #4CAF50;
+          color: #ffffff;
+          padding: 10px;
+          border-radius: 10px 10px 0 0;
+          margin-bottom: 5px;
+        }
+    
+        .round-form label,
+        .round-form input,
+        .round-form button,
+        .round-form select {
+          display: block;
+          margin-bottom: 0px;
+        }
+    
+        .round-form input,
+        .round-form button,
+        .round-form select {
+          width: 50%;
+          padding: 10px;
+        
+        }
+    form{
+width: 500px;
+height: 750px;
+border-radius: 10px;
+box-shadow: 5px 5px 15px;
+margin: 50px;
+padding-left: 10px;
+    }
+
+   
+        .round-form button {
+          background-color: #4CAF50;
+          color: #ffffff;
+          border: none;
+          border-radius: 5px;
+          cursor: pointer;
+        }
+      </style>
+    </head>
+    
+<body style="border: 5px solid rgb(5, 6, 65) ;"  >
+  
+   
+    <div class="round-form-container">
+      <img src="numl.png">
+        <div class="rounded-heading">
+          <h2>Online Admission Form</h2>
+        </div>
+    
+<form align="center" action="https://www.w3schools.com/action_page.php" target="-main" style="color: blue; background:yellow;"   >
+
+    <label for="fname" > Frist Name: </label><br>
+    <input type="text" id="fname" name="fname" placeholder="Name"  required><br>
+<label for=" lname"> Last Name: </label> <br>
+<input type="text" id="lname" name="lname" placeholder=" Last Name" required><br>
+<label for="E-mail">Email:</label><br>
+<input type="email" id="Email" name="Email"  placeholder="abc@outlook.com"required><br>
+<label for="User name"> Useer Name:</label> <br>
+<input type="text" id="Useer Name" name="user name" placeholder="xyz_xyz" required><br> 
+<label for="Password"> Password:</label> <br>
+<input type="password" id="Password" name="password" placeholder="password" required><br> 
+<label type="text">Gender :</label><br>
+    <input type="radio" name="gender" value="male" required> Male
+    <input type="radio" name="gender" value="female" required> Female
+    <input type="radio" name="gender" value="other" required> Other <br>
+  <label for="PhoneNO">Phone No:</label><br>
+  <input type="tel" id="phone" name="phone" placeholder="1234-1234567" pattern="[0-9]{4}- [09{7}]" required  >
+ <br>
+  <label for="Cnic">CNIC:</label><br>
+  <input type="text" id="PhoneNO" name="CNIC"    placeholder="12345-1234567-1" pattern="[0-9]{5}-[0-9]{7}-[0-9]{1}" required><br> 
+
+  <label for="datemax">Enter Date Of Birthday:</label>  <br>
+   
+  <input type="date" id="datemin" name="datemin" min="2006-01-01"><br>
+  <label for="Lastdegree">Last Degree:</label><br>
+   
+  <input type="text" id="Lastdegree" name="Lastdegree" required><br>
+   <label type="Address"> Address:</label> <br>
+   <textarea>
+   
+     
+    
+  </textarea>
+  <br>
+<label for="Country">Country:</label><br>
+<select id="Country" name="Country" required>
+  <option value="" disabled selected>Select your country</option>
+  <option value="Pakistan">Pakistan</option>
+  <option value="USE">UAE</option>
+  
+  <option value="India">India </option>
+</select><br>
+
+<label for="city">City:</label><br>
+<select id=" City" name="city" required>   
+<option value="disabled selected">Select your City</option>
+<option value="Islamabad">Islamabad</option>
+<option value="Delhi">Delhi</option>
+<option value="Dubai">Dubai</option>
+</select> <br><br>
+<label for="myfile">Upload Picture :</label><br><br>
+<input type="file" id="myfile" name="myfile"><br>
+<label type="rest"> Rest:</label><br>
+<input type="reset" value="Reset">
+
+
+
+<div class="round-form" align="center"><br>  
+  <br>
+    <button type="Register" >Register</button>
+  </div>
+ <br>
+</form>
+
+</body>
+</html>
