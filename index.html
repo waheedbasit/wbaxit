@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Loading Data with Json Server</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  </head>
+  <body class="bg-dark l">
+    <div class="container">        
+        <h1 class="display-1 text-center my-4 text-light">Products</h1>
+    </div>
+    <div class="container">
+        <form class="w-75 mx-auto my-5">
+            <div class="mb-3">
+                <label for="id" class="label-control text-light">Please enter Id:</label>
+                <input type="text" id="id" class="form-control">
+                <p class="error error-id"></p>
+            </div>
+            <div class="mb-3">
+                <label for="name" class="label-control text-light">Please enter name:</label>
+                <input type="text" id="name" class="form-control">
+                <p class="error error-name"></p>
+            </div>
+            <div class="mb-3">
+                <label for="image" class="label-control text-light">Please enter image url:</label>
+                <input type="text" id="image" class="form-control">
+                <p class="error error-image"></p>
+            </div>
+            <div class="mb-3">
+                <label for="brand" class="label-control text-light">Please enter brand:</label>
+                <input type="text" id="brand" class="form-control">
+                <p class="error error-brand"></p>
+            </div>
+            <div class="mb-3">
+                <label for="model" class="label-control text-light">Please enter model:</label>
+                <input type="text" id="model" class="form-control">
+                <p class="error error-model"></p>
+            </div>
+            <div class="mb-3">
+                <label for="price" class="label-control text-light">Please enter price:</label>
+                <input type="number" step="0.5" id="price" class="form-control">
+                <p class="error error-price"></p>
+            </div>
+            <div class="mb-3">
+                <input type="button" value="Save" class="btn btn-success d-block mx-auto" id="btn-save">
+            </div>
+        </form>
+    </div>
+    <div class="container">
+        <div class="row" id="productsDisplay">
+            <!-- <div class="col-md-3">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>
+                            Mouse
+                        </h3>
+                    </div>
+                    <div class="card-body">
+                        <img src="https://i.ebayimg.com/images/g/OpYAAOSwYGhk53Oi/s-l1600.jpg" alt="mouse" class="img-thumbnail">
+                        <p>Barnd: LogiTec</p>
+                        <p>Model: m210</p>
+                        <p>Price: 21</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>
+                            Mouse
+                        </h3>
+                    </div>
+                    <div class="card-body">
+                        <img src="https://i.ebayimg.com/images/g/OpYAAOSwYGhk53Oi/s-l1600.jpg" alt="mouse" class="img-thumbnail">
+                        <p>Barnd: LogiTec</p>
+                        <p>Model: m210</p>
+                        <p>Price: 21</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>
+                            Mouse
+                        </h3>
+                    </div>
+                    <div class="card-body">
+                        <img src="https://i.ebayimg.com/images/g/OpYAAOSwYGhk53Oi/s-l1600.jpg" alt="mouse" class="img-thumbnail">
+                        <p>Barnd: LogiTec</p>
+                        <p>Model: m210</p>
+                        <p>Price: 21</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>
+                            Mouse
+                        </h3>
+                    </div>
+                    <div class="card-body">
+                        <img src="https://i.ebayimg.com/images/g/OpYAAOSwYGhk53Oi/s-l1600.jpg" alt="mouse" class="img-thumbnail">
+                        <p>Barnd: LogiTec</p>
+                        <p>Model: m210</p>
+                        <p>Price: 21</p>
+                    </div>
+                </div>
+            </div> -->
+            
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script>
+        function displayDiv(datum){
+            const div = `<div class="col-md-3">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>
+                            ${datum.name}
+                        </h3>
+                    </div>
+                    <div class="card-body">
+                        <img src="${datum.image}" alt="${datum.name.toLowerCase()}" class="img-thumbnail">
+                        <p>Barnd: ${datum.brand}</p>
+                        <p>Model: ${datum.model}</p>
+                        <p>Price: ${datum.price}</p>
+                    </div>
+                </div>`;
+            return div;
+        }
+        const productsDiv = document.querySelector("#productsDisplay");
+        fetch("http://localhost:3000/products",{
+            method:"GET",
+            headers:{
+                "Accept":"application/json",
+                "Content-Type":"application/json"
+            }
+        })
+        .then(function(response){
+            return response.json();
+        })
+        .then(function(data){
+            data.forEach(function(d){                
+                productsDiv.innerHTML+=displayDiv(d);
+            })
+        })
+
+        const id=document.querySelector("#id");
+        const name=document.querySelector("#name");
+        const image=document.querySelector("#image");
+        const brand=document.querySelector("#brand");
+        const model=document.querySelector("#model");
+        const price=document.querySelector("#price");
+        const btnSave=document.querySelector("#btn-save");
+        btnSave.addEventListener("click",function(e){
+            e.preventDefault();
+            let flag = false;
+            if(id.value==""){
+                const p = document.querySelector(".error-id");
+                p.innerText = "Please enter the id";
+                flag=false;
+            } else {
+                const p = document.querySelector(".error-id");
+                p.innerText = "";
+                flag=true;
+            }
+            if(name.value==""){
+                const p = document.querySelector(".error-name");
+                p.innerText = "Please enter the name";
+                flag=false;
+            } else {
+                const p = document.querySelector(".error-name");
+                p.innerText = "";
+                flag=true;
+            }
+            if(image.value==""){
+                const p = document.querySelector(".error-image");
+                p.innerText = "Please enter the image";
+                flag=false;
+            } else {
+                const p = document.querySelector(".error-image");
+                p.innerText = "";
+                flag=true;
+            }
+            if(brand.value==""){
+                const p = document.querySelector(".error-brand");
+                p.innerText = "Please enter the brand";
+                flag=false;
+            } else {
+                const p = document.querySelector(".error-brand");
+                p.innerText = "";
+                flag=true;
+            }
+            if(model.value==""){
+                const p = document.querySelector(".error-model");
+                p.innerText = "Please enter the model";
+                flag=false;
+            } else {
+                const p = document.querySelector(".error-model");
+                p.innerText = "";
+                flag=true;
+            }
+            if(price.value==""){
+                const p = document.querySelector(".error-price");
+                p.innerText = "Please enter the price";
+                flag=false;
+            } else {
+                const p = document.querySelector(".error-price");
+                p.innerText = "";
+                flag=true;
+            }
+            if(flag){
+                fetch("http://localhost:3000/products",{
+                    method:"POST",
+                    headers:{
+                        "Accept":"application/json",
+                        "Content-Type":"application/json"
+                    },
+                    body:JSON.stringify(
+                        {
+                        id:id.value,
+                        name:name.value,
+                        image:image.value,
+                        brand:brand.value,
+                        price:price.value
+                        }
+                    )
+                })
+                .then(function(response){
+                    return response.json();
+                })
+                .then(function(data){             
+                    productsDiv.innerHTML+=displayDiv(data);
+                })
+            }
+        })
+    </script>
+  </body>
+</html>

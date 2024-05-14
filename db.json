@@ -1,0 +1,40 @@
+{
+  "products": [
+    {
+      "id": "1",
+      "name": "Mouse",
+      "brand": "LogiTec",
+      "model": "m210",
+      "image": "https://i.ebayimg.com/images/g/OpYAAOSwYGhk53Oi/s-l1600.jpg",
+      "price": "21"
+    },
+    {
+      "id": "2",
+      "name": "Laptop",
+      "image": "https://i.pinimg.com/564x/2b/1c/c6/2b1cc68c80a063fbe51fa25f972f8bda.jpg",
+      "brand": "Haier",
+      "price": "12"
+    },
+    {
+      "id": "3",
+      "name": "Phone",
+      "image": "https://asia-exstatic-vivofs.vivo.com/PSee2l50xoirPK7y/1708657158367/ff3bb545e52898e898fd2d46fe828293.png",
+      "brand": "Vivo",
+      "price": "15000"
+    },
+    {
+      "id": "4",
+      "name": "Phone",
+      "image": "https://static.realme.net/v2/realme-gt-luna-a/images/banner/m/bg1-15460e54c2.jpg",
+      "brand": "Realme",
+      "price": "12223"
+    },
+    {
+      "id": "5",
+      "name": "Phone",
+      "image": "https://asia-exstatic-vivofs.vivo.com/PSee2l50xoirPK7y/1705654195706/f6bf968c16426e86ddbc5bc8be9470d1.png",
+      "brand": "vivo",
+      "price": "60000"
+    }
+  ]
+}

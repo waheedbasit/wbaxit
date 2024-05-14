@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unordered list</title>
+</head>
+<body>
+    <ul id="ulList"></ul>
+
+    <script>
+        const myArr = ["Pakistan", "India", "Bangladash", "Canada", "USA", "UK"];
+        const ul = document.querySelector("#ulList");
+        myArr.forEach(function(data){
+            // const li = document.createElement("li");
+            // const textNode = document.createTextNode(data);
+            // li.appendChild(textNode);
+            // ul.appendChild(li);
+            const li = `
+                    <li>${data}</li>
+                `;
+            ul.innerHTML+=li;
+        })
+    </script>
+</body>
+</html>
