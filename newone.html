@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+          const Students = [
+              {
+                 rollnumber: 3400,
+                  name: "waheed",
+                 email: "waheedbasit@outlook.com"
+             },
+              {
+                rollnumber: 3700,
+                name: "Ahmed",
+               email: "ahmed@outlook.com"
+           },
+            {
+               rollnumber: 3700,
+               name: "Noor",
+                email: "noor@outlook.com"
+           }
+       ];
+       
+         for (let i = 0; i < Students.length; i++) {
+            const str = `name: ${Students[i].name}, email: ${Students[i].email}`;
+         console.log(str);
+       }
+ console.log(Students)
+         console.log(JSON.stringify(Students));
+
+
+        let i=0;
+       while (i<5)
+       { console.log(`hello ${i}`);
+            i++;
+
+       }
+for ( let std of Students){
+    console.log(std.name);
+           
+   
+}
+const arr =[ "hello", "Pakistan", " Something"];
+for (let a of arr){
+    console.log(a);
+}
+function sunNumber(a,b){
+     return Math.pow(a,b);
+   
+}
+console.log(sunNumber(5,2));
+console.log(sunNumber(12,5));
+console.log(sunNumber(13,2));
+
+function squareNum(a){
+    console.log(a*a);
+}
+squareNum(5);
+squareNum(7);
+
+    </script>
+</body>
+</html>
